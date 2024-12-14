@@ -1,0 +1,19 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    background-color: rgba(35, 185, 255, 0.87);
+    padding: 15px;
+}
+
+
+.navbar .logo{
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

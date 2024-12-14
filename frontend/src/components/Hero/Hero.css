@@ -1,0 +1,16 @@
+.hero-section{
+    background-color: aliceblue;
+    height: 90vh;
+    background: url('https://s7d1.scene7.com/is/image/dmqualcommprod/getting-personal-with-on-device-ai');
+    
+}
+
+.hero-section .hero-content{
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    text-align:center;
+    padding: 20px;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
