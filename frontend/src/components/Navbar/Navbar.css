@@ -6,14 +6,33 @@
 }
 
 .navbar{
-    background-color: rgba(35, 185, 255, 0.87);
     padding: 15px;
 }
 
 
-.navbar .logo{
-    text-align: center;
+.navbar .navbar-logo{
+    padding: 0 40px;
+    float: left;
     font-size: 30px;
-    color: white;
+    color: #041D34;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.navbar .nav-items{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-right: 4rem;
+    list-style-type: none;
+    justify-content: flex-end;
+    cursor: pointer;
+    
+    
+}
+
+
+.navbar .nav-items .nav-link{
+   font-size: 20px;
+   padding: 10px 0;
+   color: #000000;
 }

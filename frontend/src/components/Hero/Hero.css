@@ -1,16 +1,67 @@
 .hero-section{
-    background-color: aliceblue;
-    height: 90vh;
-    background: url('https://s7d1.scene7.com/is/image/dmqualcommprod/getting-personal-with-on-device-ai');
-    
+    display: flex;
+    flex-direction: row;
+    height: auto;
 }
 
-.hero-section .hero-content{
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    text-align:center;
+
+.hero-section .left-container{
+    width: 903px;
+    height: 8px;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-section .left-container .left-heading{
+    margin: 40px 50px 10px 50px;
+    font-size: 40px;
+}
+
+
+.hero-section .left-container .left-sub-heading{
+   margin: 10px 50px;
+   font-size: 28px;
+   letter-spacing: 2px;
+   color: rgb(78, 78, 78);
+}
+
+
+
+
+.hero-section .left-container .left-para{
+    font-size: 18px;
+    margin: 40px 50px 20px;
+    color: #515E71;
+    word-spacing: 10px;
+    line-height: 23px;
+}
+
+
+.hero-section .left-container .start-btn{
+ width: 110px;
+ padding: 10px 10px;
+ margin: 20px 50px;
+ background-color: #007AFF;
+ border: none;
+ color: #ffffff;
+ border-radius: 10px;
+ cursor: pointer;
+}
+
+
+
+
+.hero-section .right-container{
     padding: 20px;
-    color: #fff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 3rem 0rem 0 7rem;
+}
+
+.hero-section .right-container .right-img{
+    width: 373px;
+    height: 327px;
+    float: right;
+    align-items: flex-end;
+    border-radius: 10px;
+    
 }
