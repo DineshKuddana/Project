@@ -1,0 +1,14 @@
+.step2-container {
+    margin-top: 20px;
+  }
+  
+  .step2-input,
+  .step2-textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
