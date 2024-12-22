@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './step3.css';
 
-const Step3 = ({ setCanContinue }) => {
+const Step3 = ({ setCanContinue, setStep3Data }) => {
   const [questionType, setQuestionType] = useState('');
   const [difficulty, setDifficulty] = useState('');
   const [numQuestions, setNumQuestions] = useState('');
@@ -10,6 +10,7 @@ const Step3 = ({ setCanContinue }) => {
   const validateSelections = () => {
     if (questionType && difficulty && numQuestions) {
       setCanContinue(true); // Enable Finish button if all selections are valid
+      setStep3Data({ questionType, difficulty, numQuestions }); // Pass the selected data to parent
     } else {
       setCanContinue(false); // Disable Finish button if any selection is missing
     }
@@ -68,8 +69,6 @@ const Step3 = ({ setCanContinue }) => {
           </select>
         </div>
       </div>
-
-      
     </div>
   );
 };

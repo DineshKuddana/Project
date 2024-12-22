@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './step2.css';
 
-const Step2 = ({ selectedStep1, setCanContinue }) => {
+const Step2 = ({ selectedStep1, setCanContinue, setStep2Data }) => {
   const [inputValue, setInputValue] = useState(''); // Track input value
+  const [fileValue, setFileValue] = useState(null); // Track file input values
 
   // Function to render the appropriate input field
   const renderInput = () => {
@@ -41,33 +42,45 @@ const Step2 = ({ selectedStep1, setCanContinue }) => {
         );
       case 4:
         return (
-          <input
-            type="file"
-            accept=".pdf"
-            className="step2-input"
-            required
-            onChange={handleFileChange}
-          />
+          <>
+            <input
+              type="file"
+              accept=".pdf"
+              className="step2-input"
+              required
+              onChange={handleFileChange}
+            />
+            {/* Placeholder value for PDF input */}
+            {!fileValue && <p>Default PDF: 'default_pdf_url'</p>}
+          </>
         );
       case 5:
         return (
-          <input
-            type="file"
-            accept="audio/*"
-            className="step2-input"
-            required
-            onChange={handleFileChange}
-          />
+          <>
+            <input
+              type="file"
+              accept="audio/*"
+              className="step2-input"
+              required
+              onChange={handleFileChange}
+            />
+            {/* Placeholder value for Audio input */}
+            {!fileValue && <p>Default Audio: 'default_audio_url'</p>}
+          </>
         );
       case 6:
         return (
-          <input
-            type="file"
-            accept="video/*"
-            className="step2-input"
-            required
-            onChange={handleFileChange}
-          />
+          <>
+            <input
+              type="file"
+              accept="video/*"
+              className="step2-input"
+              required
+              onChange={handleFileChange}
+            />
+            {/* Placeholder value for Video input */}
+            {!fileValue && <p>Default Video: 'default_video_url'</p>}
+          </>
         );
       default:
         return <p>Please select an option in Step 1.</p>;
@@ -76,15 +89,24 @@ const Step2 = ({ selectedStep1, setCanContinue }) => {
 
   // Update the input value state for text inputs
   const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+    const value = event.target.value;
+    setInputValue(value);
+    setStep2Data(value); // Pass the input value to the parent component
+    console.log('Input value changed:', value); // Log the input value
   };
 
   // Update the state based on file input (just set canContinue to true if any file is selected)
   const handleFileChange = (event) => {
     if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      setFileValue(file); // Store the selected file
       setCanContinue(true);
+      setStep2Data(file); // Pass the file to the parent component
+      console.log('File selected:', file); // Log the file object
     } else {
+      setFileValue(null); // Reset if no file is selected
       setCanContinue(false);
+      console.log('No file selected'); // Log when no file is selected
     }
   };
 
