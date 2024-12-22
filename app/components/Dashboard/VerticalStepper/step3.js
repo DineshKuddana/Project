@@ -9,9 +9,9 @@ const Step3 = ({ setCanContinue }) => {
   // Function to validate if all selections are made
   const validateSelections = () => {
     if (questionType && difficulty && numQuestions) {
-      setCanContinue(true); // Enable Continue button if all selections are valid
+      setCanContinue(true); // Enable Finish button if all selections are valid
     } else {
-      setCanContinue(false); // Disable Continue button if any selection is missing
+      setCanContinue(false); // Disable Finish button if any selection is missing
     }
   };
 
@@ -23,75 +23,53 @@ const Step3 = ({ setCanContinue }) => {
   return (
     <div className="step3-container">
       <div className="step3-row">
-        {/* Question Type Selection */}
+        {/* Question Type Dropdown */}
         <div className="step3-box">
           <label>Select Question Type</label>
-          <div
-            className={`step3-option ${questionType === 'mcq' ? 'selected' : ''}`}
-            onClick={() => setQuestionType('mcq')}
+          <select
+            className="step3-dropdown"
+            value={questionType}
+            onChange={(e) => setQuestionType(e.target.value)}
           >
-            MCQs
-          </div>
-          <div
-            className={`step3-option ${questionType === 'true_false' ? 'selected' : ''}`}
-            onClick={() => setQuestionType('true_false')}
-          >
-            True or False
-          </div>
-          <div
-            className={`step3-option ${questionType === 'fill_in_the_blanks' ? 'selected' : ''}`}
-            onClick={() => setQuestionType('fill_in_the_blanks')}
-          >
-            Fill in the Blanks
-          </div>
+            <option value="">Select...</option>
+            <option value="mcq">MCQs</option>
+            <option value="true_false">True or False</option>
+            <option value="fill_in_the_blanks">Fill in the Blanks</option>
+          </select>
         </div>
 
-        {/* Difficulty Level Selection */}
+        {/* Difficulty Level Dropdown */}
         <div className="step3-box">
           <label>Select Difficulty Level</label>
-          <div
-            className={`step3-option ${difficulty === 'easy' ? 'selected' : ''}`}
-            onClick={() => setDifficulty('easy')}
+          <select
+            className="step3-dropdown"
+            value={difficulty}
+            onChange={(e) => setDifficulty(e.target.value)}
           >
-            Easy
-          </div>
-          <div
-            className={`step3-option ${difficulty === 'medium' ? 'selected' : ''}`}
-            onClick={() => setDifficulty('medium')}
-          >
-            Medium
-          </div>
-          <div
-            className={`step3-option ${difficulty === 'hard' ? 'selected' : ''}`}
-            onClick={() => setDifficulty('hard')}
-          >
-            Hard
-          </div>
+            <option value="">Select...</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
         </div>
 
-        {/* Number of Questions Selection */}
+        {/* Number of Questions Dropdown */}
         <div className="step3-box">
           <label>Select Number of Questions</label>
-          <div
-            className={`step3-option ${numQuestions === '2' ? 'selected' : ''}`}
-            onClick={() => setNumQuestions('2')}
+          <select
+            className="step3-dropdown"
+            value={numQuestions}
+            onChange={(e) => setNumQuestions(e.target.value)}
           >
-            2 Questions
-          </div>
-          <div
-            className={`step3-option ${numQuestions === '4' ? 'selected' : ''}`}
-            onClick={() => setNumQuestions('4')}
-          >
-            4 Questions
-          </div>
-          <div
-            className={`step3-option ${numQuestions === '6' ? 'selected' : ''}`}
-            onClick={() => setNumQuestions('6')}
-          >
-            6 Questions
-          </div>
+            <option value="">Select...</option>
+            <option value="2">2 Questions</option>
+            <option value="4">4 Questions</option>
+            <option value="6">6 Questions</option>
+          </select>
         </div>
       </div>
+
+      
     </div>
   );
 };
