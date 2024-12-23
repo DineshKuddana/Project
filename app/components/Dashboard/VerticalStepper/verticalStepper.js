@@ -7,9 +7,9 @@ import StepContent from '@mui/material/StepContent';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import Step1 from './Step1';
-import Step2 from './Step2';
-import Step3 from './Step3';
+import Step1 from './step1';
+import Step2 from './step2';
+import Step3 from './step3';
 
 const steps = [
   { label: 'Step 1', description: 'Select a data type.' },

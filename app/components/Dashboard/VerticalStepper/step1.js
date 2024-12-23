@@ -13,9 +13,9 @@ const Step1 = ({ setCanContinue, setSelectedStep1 }) => {
     { id: 6, image: 'https://cdn-icons-png.flaticon.com/512/609/609803.png', title: 'Video', text: 'Manage and enhance your video content.' },
   ];
 
-  const handleSelection = (title) => {
-    setSelectedOption(title);
-    setSelectedStep1(title); // Pass the selected title to the parent component
+  const handleSelection = (id) => {
+    setSelectedOption(id);
+    setSelectedStep1(id); // Pass the selected title to the parent component
     setCanContinue(true); // Enable the "Continue" button
   };
 
@@ -24,9 +24,9 @@ const Step1 = ({ setCanContinue, setSelectedStep1 }) => {
       <div className="small-grid-container">
         {boxes.map((box) => (
           <div
-            className={`small-grid-box ${selectedOption === box.title ? 'selected' : ''}`}
+            className={`small-grid-box ${selectedOption === box.id ? 'selected' : ''}`}
             key={box.id}
-            onClick={() => handleSelection(box.title)}
+            onClick={() => handleSelection(box.id)}
           >
             <div className="small-box-image-container">
               <img src={box.image} alt={box.title} className="small-box-image" />
