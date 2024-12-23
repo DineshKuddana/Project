@@ -4,12 +4,19 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { Montserrat } from "next/font/google";
-import { ImageIcon, LayoutDashboard, MessageSquare, VideoIcon , Music , Code , Settings} from "lucide-react";
+import { ImageIcon, LayoutDashboard, MessageSquare, VideoIcon , Music , Code , Settings, ChartBarIcon} from "lucide-react";
 import { useUser, UserButton } from "@clerk/nextjs";
 
 const montserrat = Montserrat({ weight: "600", subsets: ["latin"] });
 
 const routes = [
+
+  {
+    label : "New Chat",
+    icon : ChartBarIcon,
+    href : "/dashboard",
+    color : "text-b;ack-400"
+  },
   {
     label: "Dashboard",
     icon: LayoutDashboard,
